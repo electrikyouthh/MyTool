@@ -31,11 +31,13 @@ final class MyToolUITests: XCTestCase {
     }
 
     func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
+        if #available(macOS 14.0, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+                // Use new APIs available in macOS 11 later
+        } else {
+                // Fallback on earlier versions
+        }
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()
             }
         }
     }
-}
